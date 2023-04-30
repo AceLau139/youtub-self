@@ -1,23 +1,22 @@
-import React, { useEffect, useState, useReducer } from "react";
+<!-- import React, { useEffect, useState, useReducer } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.scss";
 
-const initialTodos = 
+const initialTodos = [
   {
-    title: "Video-Animation"
+    isHover: false
   }
-
+];
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "show":
+    case "COMPLETE":
       return {
-...state, title:"Video-Animation:hover" 
-        };
-    case "hide":
+...state, title:"Video-Animation&:hover" 
+        }; 
+    case "COMPLETEd":
       return {
-...state, title:"Video-Animation" 
-        }
+...state, title:"Video-Animation" };
     default:
       return state;
   }
@@ -26,12 +25,12 @@ const reducer = (state, action) => {
 function Navbar() {
   const [state, dispatch] = useReducer(reducer, initialTodos);
 
-  const showInfo = () => {
-    dispatch({ type: "show"});
+  const handleComplete = () => {
+    dispatch({ type: "COMPLETE"});
   };
 
-  const hideInfo = () => {
-    dispatch({ type: "hide"});
+  const handleCompleted = () => {
+    dispatch({ type: "COMPLETEd"});
   };
   /*----*/
   const [active, setActive] = useState(false);
@@ -118,10 +117,12 @@ function Navbar() {
             <Link className="link menuLink" to="/one">
               Graphics & Design
             </Link>
-            <Link className="link menuLink" to="/" onMouseOver={showInfo} onMouseOut={hideInfo}>
+            <Link className="link menuLink" to="/" >
               Video & Animation
             </Link>
-
+            <div className="Video-Animation">
+昨朽杯昨
+            </div>
             <Link className="link menuLink" to="/">
               Writing & Translation
             </Link>
@@ -144,15 +145,11 @@ function Navbar() {
               Lifestyle
             </Link>
           </div>
-          
           <hr />
-                      <div className={state.title}>
-昨朽杯昨
-            </div>
         </>
       )}
     </div>
   );
 }
 
-export default Navbar;
+export default Navbar; -->

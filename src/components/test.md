@@ -1,23 +1,25 @@
-import React, { useEffect, useState, useReducer } from "react";
+<!-- import React, { useEffect, useState, useReducer } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.scss";
 
-const initialTodos = 
+const initialTodos = [
   {
-    title: "Video-Animation"
-  }
-
+    title: "Video-Animation",
+  },
+  {
+    title: "Video-Animation:hover",
+  },
+];
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "show":
+    case "COMPLETE":
       return {
 ...state, title:"Video-Animation:hover" 
-        };
-    case "hide":
+        }; 
+    case "COMPLETEd":
       return {
-...state, title:"Video-Animation" 
-        }
+...state, title:"Video-Animation" };
     default:
       return state;
   }
@@ -26,36 +28,11 @@ const reducer = (state, action) => {
 function Navbar() {
   const [state, dispatch] = useReducer(reducer, initialTodos);
 
-  const showInfo = () => {
-    dispatch({ type: "show"});
+  const handleComplete = () => {
+    dispatch({ type: "COMPLETE"});
   };
-
-  const hideInfo = () => {
-    dispatch({ type: "hide"});
-  };
-  /*----*/
-  const [active, setActive] = useState(false);
-  const [open, setOpen] = useState(false);
-
-  const { pathname } = useLocation();
-
-  const isActive = () => {
-    window.scrollY > 0 ? setActive(true) : setActive(false);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", isActive);
-    return () => {
-      window.removeEventListener("scroll", isActive);
-    };
-  }, []);
-
-  // const currentUser = null
-
-  const currentUser = {
-    id: 1,
-    username: "Anna",
-    isSeller: true,
+  const handleCompleted = () => {
+    dispatch({ type: "COMPLETEd"});
   };
 
   return (
@@ -118,10 +95,12 @@ function Navbar() {
             <Link className="link menuLink" to="/one">
               Graphics & Design
             </Link>
-            <Link className="link menuLink" to="/" onMouseOver={showInfo} onMouseOut={hideInfo}>
+            <Link className="link menuLink" to="/" onMouseOver={handleComplete} onMouseOout={handleCompleted}>
               Video & Animation
             </Link>
-
+            <div className={state.title}>唔知點解無法讀到title
+昨朽杯昨
+            </div>
             <Link className="link menuLink" to="/">
               Writing & Translation
             </Link>
@@ -144,15 +123,11 @@ function Navbar() {
               Lifestyle
             </Link>
           </div>
-          
           <hr />
-                      <div className={state.title}>
-昨朽杯昨
-            </div>
         </>
       )}
     </div>
   );
 }
 
-export default Navbar;
+export default Navbar; -->

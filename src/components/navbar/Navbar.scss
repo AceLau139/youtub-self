@@ -115,3 +115,31 @@
     font-family: "Montserrat", sans-serif;
   }
 }
+  .Video-Animation{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 1;
+  z-index: 99;
+
+  &:hover{
+  opacity: 1;
+  z-index: 99;
+  transition-delay: 0.5s;
+      width: 400px;
+height: 400px;
+background-color: blue;
+position: absolute;
+top: 180px;
+left: 280px;
+  }
+
+div{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  }
+}
